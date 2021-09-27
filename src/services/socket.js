@@ -13,10 +13,10 @@ const data = {
 export const initWsServer = (server) => {
   const io = socketIo(server);
 
-  io.on('connection',  (socket) => {
+  io.on('connection', (socket) => {
     console.log('LLEGO CONEXION!');
 
-    let msges =  Mensajes.getAllMessages();
+    let msges = Mensajes.getAllMessages();
     socket.emit('receiveMessages', msges);
 
     //Listen for chat messages
